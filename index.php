@@ -11,10 +11,10 @@ function findFiles(string $dir): void
 }
 
 // Only read Folders
-function findFolders(string $dirPath): void
+function findFolders(string $dir): void
 {
-    foreach (array_diff(scandir($dirPath), [".", ".."]) as $path) {
-        $path = $dirPath . "/" . $path;
+    foreach (array_diff(scandir($dir), [".", ".."]) as $path) {
+        $path = $dir . "/" . $path;
 
         if (is_dir($path)) {
             echo $path . PHP_EOL;
